@@ -1,0 +1,109 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial;
+}
+
+body{
+  background:#0b1220;
+  color:white;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#0f172a;
+  z-index:10;
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.logo{
+  font-weight:bold;
+  font-size:20px;
+  color:#38bdf8;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-content h1{
+  font-size:45px;
+}
+
+.hero-content p{
+  margin-top:10px;
+  color:#cbd5f5;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 28px;
+  background:#2563eb;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+h2{
+  margin-bottom:30px;
+  color:#38bdf8;
+  font-size:30px;
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.skills-grid span{
+  padding:12px;
+  background:#1e293b;
+  border-radius:8px;
+  text-align:center;
+}
+
+.project{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.project a{
+  color:#38bdf8;
+}
+
+footer{
+  text-align:center;
+  padding:18px;
+  background:#020617;
+}

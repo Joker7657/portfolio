@@ -2,89 +2,243 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Portfólio Profissional | Seu Nome</title>
+  <title>Antonio | Profissional de Dados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">Antonio</div>
-  <ul>
-    <li><a href="#home">Início</a></li>
-    <li><a href="#about">Sobre</a></li>
-    <li><a href="#skills">Habilidades</a></li>
-    <li><a href="#projects">Projetos</a></li>
-    <li><a href="#contact">Contato</a></li>
+<nav id="navbar">
+  <div class="logo">
+    <i class="fas fa-code"></i>
+    Antonio
+  </div>
+  <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul id="nav-menu">
+    <li><a href="#home" onclick="closeMobileMenu()">Início</a></li>
+    <li><a href="#about" onclick="closeMobileMenu()">Sobre</a></li>
+    <li><a href="#skills" onclick="closeMobileMenu()">Habilidades</a></li>
+    <li><a href="#projects" onclick="closeMobileMenu()">Projetos</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contato</a></li>
   </ul>
 </nav>
 
+<!-- Partículas de fundo -->
+<div class="particles" id="particles"></div>
+
 <section id="home" class="hero">
   <div class="hero-content">
-    <h1>Sou Profissional de Dados</h1>
-    <p>Trabalho com análise, engenharia e tratamento de dados para transformar informação em decisão.</p>
-    <a href="#projects" class="btn">Ver Projetos</a>
+    <div class="profile-image-container">
+      <div class="profile-ring"></div>
+      <img src="sua-foto.jpg" alt="Antonio" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <div class="profile-placeholder">
+        <i class="fas fa-user"></i>
+        <span>Adicione sua foto</span>
+      </div>
+    </div>
+    <h1 class="glitch" data-text="Antonio">Antonio</h1>
+    <p class="typing-text">Profissional de Dados</p>
+    <p class="hero-description">Transformando dados em insights estratégicos</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">
+        <i class="fas fa-rocket"></i> Ver Projetos
+      </a>
+      <a href="#contact" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> Contato
+      </a>
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/Joker7657" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/seuperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:seuemail@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <i class="fas fa-chevron-down"></i>
   </div>
 </section>
 
 <section id="about" class="container">
-  <h2>Sobre Mim</h2>
-  <div class="about-box">
-    <div>
-      <p>
-        Profissional focado em dados, com experiência em pipelines, SQL avançado, ETL,
-        Data Cleaning, análise exploratória e visualização.
-        Apaixonado por resolver problemas reais usando dados.
+  <h2 class="section-title">
+    <i class="fas fa-user-circle"></i>
+    Sobre Mim
+  </h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p class="fade-in">
+        Profissional focado em <strong>análise de dados</strong>, com experiência sólida em 
+        pipelines de dados, SQL avançado, ETL, Data Cleaning e visualização.
       </p>
+      <p class="fade-in">
+        Apaixonado por transformar dados complexos em <strong>insights acionáveis</strong> 
+        que impulsionam decisões estratégicas de negócio.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Projetos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-label">Anos Experiência</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">Dashboards</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="skills" class="container">
-  <h2>Habilidades</h2>
+  <h2 class="section-title">
+    <i class="fas fa-code"></i>
+    Habilidades
+  </h2>
   <div class="skills-grid">
-    <span>SQL Avançado</span>
-    <span>ETL & Pipelines</span>
-    <span>Data Cleaning</span>
-    <span>Python</span>
-    <span>Power BI / Tableau</span>
-    <span>Modelagem de Dados</span>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-database"></i></div>
+      <h3>SQL Avançado</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="95"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+      <h3>ETL & Pipelines</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="90"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-broom"></i></div>
+      <h3>Data Cleaning</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="92"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-python"></i></div>
+      <h3>Python</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="88"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Power BI / Tableau</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="85"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+      <h3>Modelagem de Dados</h3>
+      <div class="skill-bar">
+        <div class="skill-progress" data-progress="90"></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="projects" class="container">
-  <h2>Projetos Destaque</h2>
+  <h2 class="section-title">
+    <i class="fas fa-rocket"></i>
+    Projetos Destaque
+  </h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-header">
+        <i class="fas fa-database project-icon"></i>
+        <span class="project-tag">SQL + Pipeline</span>
+      </div>
+      <h3>Data Pipeline + SQL Analytics</h3>
+      <p>Projeto completo desde coleta, tratamento de dados, modelagem e criação de consultas complexas com otimização de performance.</p>
+      <div class="project-tech">
+        <span>SQL</span>
+        <span>Python</span>
+        <span>ETL</span>
+      </div>
+      <a target="_blank" href="https://github.com/Joker7657/projeto" class="project-link">
+        <i class="fab fa-github"></i> Ver no GitHub
+      </a>
+    </div>
 
-  <div class="project">
-    <h3>📊 Data Pipeline + SQL Analytics</h3>
-    <p>Projeto completo desde coleta, tratamento de dados, modelagem e criação de consultas complexas.</p>
-    <a target="_blank" href="https://github.com/seuusuario/projeto">Ver no GitHub</a>
+    <div class="project-card">
+      <div class="project-header">
+        <i class="fas fa-chart-bar project-icon"></i>
+        <span class="project-tag">Dashboard</span>
+      </div>
+      <h3>Dashboard Profissional</h3>
+      <p>Dashboard interativo com indicadores KPI, métricas de negócio e insights estratégicos em tempo real.</p>
+      <div class="project-tech">
+        <span>Power BI</span>
+        <span>DAX</span>
+        <span>SQL</span>
+      </div>
+      <a target="_blank" href="https://github.com/Joker7657/projeto2" class="project-link">
+        <i class="fab fa-github"></i> Ver no GitHub
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <i class="fas fa-broom project-icon"></i>
+        <span class="project-tag">Data Quality</span>
+      </div>
+      <h3>Data Cleaning & Quality Control</h3>
+      <p>Projeto focado em limpeza profunda, validação automatizada e estruturação de dados para análise confiável.</p>
+      <div class="project-tech">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Regex</span>
+      </div>
+      <a target="_blank" href="https://github.com/Joker7657/projeto3" class="project-link">
+        <i class="fab fa-github"></i> Ver no GitHub
+      </a>
+    </div>
   </div>
-
-  <div class="project">
-    <h3>📈 Dashboard Profissional</h3>
-    <p>Dashboard com indicadores de negócio e insights estratégicos.</p>
-    <a target="_blank" href="https://github.com/seuusuario/projeto2">Ver no GitHub</a>
-  </div>
-
-  <div class="project">
-    <h3>🧹 Data Cleaning & Quality Control</h3>
-    <p>Projeto focado em limpeza profunda, validação e estruturação de dados.</p>
-    <a target="_blank" href="https://github.com/seuusuario/projeto3">Ver no GitHub</a>
-  </div>
-
 </section>
 
 <section id="contact" class="container">
-  <h2>Contato</h2>
-  <p>📧 Email: seuemail@gmail.com</p>
-  <p>🔗 LinkedIn: linkedin.com/in/seuperfil</p>
-  <p>🐙 GitHub: github.com/seuusuario</p>
+  <h2 class="section-title">
+    <i class="fas fa-paper-plane"></i>
+    Entre em Contato
+  </h2>
+  <div class="contact-content">
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <div>
+          <h4>LinkedIn</h4>
+          <a href="https://linkedin.com/in/seuperfil" target="_blank">linkedin.com/in/seuperfil</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <div>
+          <h4>GitHub</h4>
+          <a href="https://github.com/Joker7657" target="_blank">github.com/Joker7657</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2025 — Portfólio Profissional | Seu Nome
+  <p>© 2025 Antonio | Desenvolvido com <i class="fas fa-heart"></i></p>
 </footer>
 
 <script src="script.js"></script>

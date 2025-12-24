@@ -1,0 +1,6 @@
+Para adicionar sua foto:
+1. Coloque uma imagem chamada 'sua-foto.jpg' na pasta do portfolio
+2. Ou renomeie qualquer foto sua para 'sua-foto.jpg'
+3. Formatos suportados: .jpg, .jpeg, .png, .webp
+
+Até lá, um ícone de placeholder será mostrado no lugar.

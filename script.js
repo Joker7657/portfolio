@@ -101,9 +101,16 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar seções para animação
 document.querySelectorAll('section').forEach(section => {
-  section.style.opacity = '0';
-  section.style.transform = 'translateY(30px)';
-  section.style.transition = 'all 0.8s ease';
+  // Não ocultar a seção home e about inicialmente
+  if (section.id !== 'home' && section.id !== 'about') {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'all 0.8s ease';
+  } else {
+    section.style.opacity = '1';
+    section.style.transform = 'translateY(0)';
+    section.style.transition = 'all 0.8s ease';
+  }
   observer.observe(section);
 });
 

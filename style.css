@@ -476,6 +476,17 @@ nav a:hover::after {
   animation: fadeIn 1s ease;
 }
 
+.about-text.centered {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text.centered p {
+  text-align: justify;
+  text-align-last: center;
+}
+
 .about-text strong {
   color: var(--primary);
 }
@@ -614,6 +625,97 @@ nav a:hover::after {
 .projects-grid::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(90deg, var(--secondary), var(--primary));
   box-shadow: 0 0 10px var(--primary);
+}
+
+/* Projects Wrapper e Indicadores de Scroll */
+.projects-wrapper {
+  position: relative;
+  padding: 0 50px;
+}
+
+.scroll-hint {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.scroll-hint:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+}
+
+.scroll-hint-left {
+  left: 0;
+}
+
+.scroll-hint-right {
+  right: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+  }
+}
+
+.scroll-indicator-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 600;
+  animation: slideHint 2s ease-in-out infinite;
+}
+
+.scroll-indicator-text i {
+  font-size: 20px;
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+.scroll-indicator-text i:first-child {
+  animation-delay: 0s;
+}
+
+.scroll-indicator-text i:last-child {
+  animation-delay: 0.75s;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes slideHint {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .project-card {
@@ -852,6 +954,25 @@ footer i {
   .project-card {
     min-width: 300px;
     max-width: 300px;
+  }
+
+  .projects-wrapper {
+    padding: 0 30px;
+  }
+
+  .scroll-hint {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .scroll-indicator-text {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .about-text.centered p {
+    text-align: justify;
   }
 
   .section-title {

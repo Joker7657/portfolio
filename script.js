@@ -201,7 +201,55 @@ window.addEventListener('load', () => {
     homeSection.style.opacity = '1';
     homeSection.style.transform = 'translateY(0)';
   }
+  
+  // Scroll lateral nos projetos
+  setupProjectsScroll();
 });
+
+// Scroll lateral nos projetos
+function setupProjectsScroll() {
+  const scrollHintLeft = document.querySelector('.scroll-hint-left');
+  const scrollHintRight = document.querySelector('.scroll-hint-right');
+  const projectsGrid = document.querySelector('.projects-grid');
+  
+  if (scrollHintLeft && scrollHintRight && projectsGrid) {
+    scrollHintLeft.addEventListener('click', () => {
+      projectsGrid.scrollBy({
+        left: -400,
+        behavior: 'smooth'
+      });
+    });
+    
+    scrollHintRight.addEventListener('click', () => {
+      projectsGrid.scrollBy({
+        left: 400,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Ocultar/mostrar setas baseado na posição do scroll
+    projectsGrid.addEventListener('scroll', () => {
+      if (projectsGrid.scrollLeft <= 0) {
+        scrollHintLeft.style.opacity = '0.3';
+        scrollHintLeft.style.pointerEvents = 'none';
+      } else {
+        scrollHintLeft.style.opacity = '1';
+        scrollHintLeft.style.pointerEvents = 'auto';
+      }
+      
+      if (projectsGrid.scrollLeft >= projectsGrid.scrollWidth - projectsGrid.clientWidth - 10) {
+        scrollHintRight.style.opacity = '0.3';
+        scrollHintRight.style.pointerEvents = 'none';
+      } else {
+        scrollHintRight.style.opacity = '1';
+        scrollHintRight.style.pointerEvents = 'auto';
+      }
+    });
+    
+    // Trigger inicial para verificar posição
+    projectsGrid.dispatchEvent(new Event('scroll'));
+  }
+}
 
 // Prevenir zoom em mobile (opcional)
 document.addEventListener('gesturestart', function (e) {

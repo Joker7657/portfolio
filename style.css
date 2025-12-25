@@ -587,9 +587,33 @@ nav a:hover::after {
 
 /* Projects Section */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
   gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 12px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  box-shadow: 0 0 10px var(--primary);
 }
 
 .project-card {
@@ -600,6 +624,10 @@ nav a:hover::after {
   border: 1px solid rgba(0, 212, 255, 0.1);
   position: relative;
   overflow: hidden;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .project-card::after {
@@ -818,7 +846,12 @@ footer i {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    min-width: 300px;
+    max-width: 300px;
   }
 
   .section-title {
